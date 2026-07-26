@@ -1,5 +1,5 @@
 import { prisma } from "@/src/lib/prisma"
-import { LigneRoute } from "@/app/components/LigneRoute"
+
 
 export default async function Documents() {
   const documents = await prisma.document.findMany({ orderBy: { createdAt: "desc" } })
@@ -12,7 +12,7 @@ export default async function Documents() {
         <p className="font-body text-encre/60 mt-3">Statuts, règlement intérieur, procès-verbaux</p>
       </section>
 
-      <LigneRoute />
+     
 
       <section className="max-w-3xl mx-auto px-4 md:px-8 py-12">
         <div className="bg-base-200 rounded-2xl divide-y divide-indigo/10">

@@ -19,7 +19,7 @@ export function Navbar() {
     <header className="sticky top-0 z-50 bg-papier/90 backdrop-blur">
       <div className="max-w-6xl mx-auto px-4 md:px-8 h-16 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2" onClick={() => setOuvert(false)}>
-          <Image src="/logo.png" alt="Logo AEESTN" width={36} height={36} className="rounded-full" />
+          <Image src="/logo.jpeg" alt="Logo AEESTN" width={36} height={36} className="rounded-full" />
           <span className="font-display text-lg font-semibold text-indigo tracking-tight hidden sm:block">
             A.E.E.S.T.N
           </span>

@@ -1,8 +1,8 @@
 import { prisma } from "@/src/lib/prisma"
 import Link from "next/link"
 import Image from "next/image"
-import { LigneRoute } from "../components/LigneRoute"
-import {  IllustrationHero} from "@/app/components/IllustrationHero"
+import { LigneRoute } from "@/app/components/LigneRoute"
+import { IllustrationHero } from "@/app/components/IllustrationHero"
 
 export default async function Accueil() {
   const [dernieresActus, prochainEvenement, nbMembres] = await Promise.all([

@@ -1,5 +1,4 @@
 import { prisma } from "@/src/lib/prisma"
-import { LigneRoute } from "@/app/components/LigneRoute"
 import Image from "next/image"
 
 const LABELS_ROLE: Record<string, string> = {
@@ -63,7 +62,7 @@ export default async function Annuaire() {
         <p className="font-body text-encre/60 mt-3">{membres.length} membres inscrits à l&apos;AEESTN</p>
       </section>
 
-      <LigneRoute />
+      
 
       <section className="max-w-6xl mx-auto px-4 md:px-8 py-12">
         {bureau.length > 0 && (

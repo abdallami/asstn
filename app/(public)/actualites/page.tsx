@@ -1,6 +1,5 @@
 import { prisma } from "@/src/lib/prisma"
 import Image from "next/image"
-import { LigneRoute } from "@/app/components/LigneRoute"
 
 export default async function Actualites() {
   const actus = await prisma.actualite.findMany({ orderBy: { createdAt: "desc" } })
@@ -11,8 +10,6 @@ export default async function Actualites() {
         <p className="font-mono text-xs tracking-[0.2em] uppercase text-sable mb-3">Vie associative</p>
         <h1 className="font-display text-3xl md:text-4xl text-indigo">Actualités</h1>
       </section>
-
-      <LigneRoute />
 
       <section className="max-w-5xl mx-auto px-4 md:px-8 py-12">
         {actus.length === 0 ? (
