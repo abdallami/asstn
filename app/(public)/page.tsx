@@ -2,6 +2,7 @@ import { prisma } from "@/src/lib/prisma"
 import Link from "next/link"
 import Image from "next/image"
 import { LigneRoute } from "../components/LigneRoute"
+import {  IllustrationHero} from "@/app/components/IllustrationHero"
 
 export default async function Accueil() {
   const [dernieresActus, prochainEvenement, nbMembres] = await Promise.all([
@@ -15,19 +16,21 @@ export default async function Accueil() {
 
   return (
     <div>
-      {/* Hero */}
-      <section className="max-w-6xl mx-auto px-4 md:px-8 pt-20 pb-16 text-center">
+      <section className="max-w-6xl mx-auto px-4 md:px-8 pt-16 md:pt-20 pb-16">
+    <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+      {/* Texte — toujours en premier dans le DOM, donc en haut sur mobile */}
+      <div className="text-center md:text-left">
         <p className="font-mono text-xs tracking-[0.2em] uppercase text-sable mb-4">
           Association des Élèves, Étudiants et Stagiaires Tchadiens au Niger
         </p>
-        <h1 className="font-display text-4xl md:text-6xl font-semibold text-indigo leading-tight max-w-3xl mx-auto">
+        <h1 className="font-display text-4xl md:text-5xl font-semibold text-indigo leading-tight">
           Une communauté qui traverse la distance ensemble.
         </h1>
-        <p className="font-body text-lg text-encre/70 max-w-xl mx-auto mt-6">
+        <p className="font-body text-lg text-encre/70 mt-6">
           Nous accompagnons chaque étudiant tchadien au Niger — logement, entraide académique,
           démarches administratives et vie associative.
         </p>
-        <div className="flex gap-3 justify-center flex-wrap mt-8">
+        <div className="flex gap-3 justify-center md:justify-start flex-wrap mt-8">
           <Link href="/annuaire" className="px-6 py-3 rounded-full bg-indigo text-papier font-body hover:bg-steel transition">
             Découvrir les membres
           </Link>
@@ -35,8 +38,14 @@ export default async function Accueil() {
             Nous rejoindre
           </Link>
         </div>
-      </section>
+      </div>
 
+      {/* Illustration — toujours en second dans le DOM, donc en bas sur mobile */}
+      <div>
+        <IllustrationHero />
+      </div>
+    </div>
+  </section>
       <LigneRoute />
 
       {/* Stats */}

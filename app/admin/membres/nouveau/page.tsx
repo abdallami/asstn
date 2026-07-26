@@ -20,6 +20,10 @@ export default function NouveauMembre() {
           <option value="CHARGE_COMMUNICATION">Chargé de communication</option>
           <option value="AUTRE">Autre</option>
         </select>
+        <div>
+          <label className="label">Photo (optionnel)</label>
+          <input name="photo" type="file" accept="image/*" className="file-input file-input-bordered w-full" />
+        </div>
         <button className="btn btn-primary" type="submit">Enregistrer</button>
       </form>
     </div>
