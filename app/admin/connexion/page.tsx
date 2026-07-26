@@ -40,7 +40,8 @@ export default function ConnexionAdmin() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-base-200">
       <form onSubmit={handleSubmit} className="card w-96 bg-base-100 shadow-xl p-6 gap-4">
-        <h1 className="text-xl font-bold text-primary">Espace Bureau AEESTN</h1>
+        <h1 className="text-xl font-bold text-primary">Espace réservé au bureau AEESTN</h1>
+        <p className="text-sm opacity-60 -mt-2">Connectez-vous avec vos identifiants pour accéder à la gestion du site.</p>
         {erreur && <p className="text-error text-sm">{erreur}</p>}
         <input
           type="email" placeholder="Email" className="input input-bordered"
