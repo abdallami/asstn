@@ -1,7 +1,7 @@
-import { prisma } from "./src/lib/prisma"
 import NextAuth from "next-auth"
 import Credentials from "next-auth/providers/credentials"
 import bcrypt from "bcryptjs"
+import { prisma } from "@/src/lib/prisma"
 import { authConfig } from "./auth.config"
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
@@ -29,16 +29,4 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
     }),
   ],
   session: { strategy: "jwt" },
-  cookies: {
-    sessionToken: {
-      name: "authjs.session-token",
-      options: {
-        httpOnly: true,
-        sameSite: "lax",
-        path: "/",
-        secure: process.env.NODE_ENV === "production",
-        // Pas de maxAge défini → cookie de session : supprimé à la fermeture du navigateur
-      },
-    },
-  },
 })

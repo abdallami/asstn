@@ -4,7 +4,7 @@ export default async function TableauDeBord() {
   const [nbMembres, nbActus, nbEvenements] = await Promise.all([
     prisma.membre.count(),
     prisma.actualite.count(),
-    prisma.evenement.count(),
+    prisma.evenement.count()
   ])
 
   return (
