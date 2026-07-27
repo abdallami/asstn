@@ -10,32 +10,15 @@ export default function ConnexionAdmin() {
   const router = useRouter()
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setErreur("")
-
-    const res = await signIn("credentials", {
-      email,
-      password,
-      redirect: false,
-    })
-
-    if (!res) {
-      setErreur("Erreur de connexion, réessayez plus tard.")
-      return
-    }
-
-    if (res.error) {
-      setErreur("Email ou mot de passe incorrect")
-      return
-    }
-
-    if (res.ok) {
-      router.push("/admin")
-      return
-    }
-
-    setErreur("Impossible de se connecter. Vérifiez vos identifiants.")
+  e.preventDefault()
+  const res = await signIn("credentials", { email, password, redirect: false })
+  if (res?.error) {
+    setErreur("Email ou mot de passe incorrect")
+  } else {
+    router.push("/admin")
+    router.refresh()
   }
+}
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-base-200">
