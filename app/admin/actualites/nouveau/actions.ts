@@ -34,5 +34,6 @@ export async function creerActualite(formData: FormData) {
   })
 
   revalidatePath("/admin/actualites")
+  revalidatePath("/")   // ← ajoute cette ligne
   redirect("/admin/actualites")
 }

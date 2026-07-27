@@ -6,4 +6,5 @@ export async function supprimerActualites(ids: string[]) {
   await prisma.actualite.deleteMany({ where: { id: { in: ids } } })
   revalidatePath("/admin/actualites")
   revalidatePath("/actualites")
+  revalidatePath("/")
 }
