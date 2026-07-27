@@ -27,7 +27,7 @@ export function Navbar() {
 
         <nav className="hidden md:flex items-center gap-1 font-body text-sm">
       {LIENS.map((l) => (
-        <Link key={l.href} href={l.href} className="px-3 py-2 rounded-full hover:bg-indigo/5 text-encre/80 hover:text-indigo transition">
+        <Link key={l.href} href={l.href} className="px-3 py-2 rounded-full hover:bg-indigo hover:text-papier text-encre/80 transition-all duration-200">
           {l.label}
         </Link>
       ))}
