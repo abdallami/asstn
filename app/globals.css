@@ -26,3 +26,14 @@
 .lien-souligne:hover::after {
   width: 100%;
 }
+
+@keyframes defiler {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-defiler {
+  animation: defiler 18s linear infinite;
+}
+.animate-defiler:hover {
+  animation-play-state: paused;
+}

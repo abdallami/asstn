@@ -31,9 +31,9 @@ export function Navbar() {
           {l.label}
         </Link>
       ))}
-      <Link href="/admin/connexion" className="px-3 py-2 rounded-full hover:bg-indigo/5 text-encre/50 hover:text-indigo transition font-mono text-xs uppercase tracking-wide">
-        Bureau
-      </Link>
+     <Link href="/admin/connexion" className="px-3 py-2 rounded-full border border-transparent hover:border-indigo hover:bg-indigo hover:text-papier text-encre/50 transition-all font-mono text-xs uppercase tracking-wide">
+      Bureau
+     </Link>
       <Link href="/contact" className="ml-2 px-4 py-2 rounded-full bg-indigo text-papier hover:bg-steel transition">
         Contact
       </Link>

@@ -120,17 +120,19 @@ export default async function Accueil() {
             <p className="font-mono text-xs tracking-[0.2em] uppercase text-sable mb-3">Ils nous accompagnent</p>
             <h2 className="font-display text-2xl md:text-3xl text-papier mb-10">Partenaires</h2>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-              {PARTENAIRES.map((p) => (
-                <div
-                  key={p.nom}
-                  className="bg-papier/5 border border-papier/15 rounded-2xl p-6 flex flex-col items-center gap-3 hover:bg-papier/10 hover:border-sable/60 transition-all duration-300"
-                >
-                  <LogoPartenaire nom={p.nom} logo={p.logo} />
-                  <p className="font-body text-sm text-papier/80 text-center">{p.nom}</p>
-                </div>
-              ))}
-            </div>
+           <div className="overflow-hidden">
+          <div className="flex w-max animate-defiler">
+            {[...PARTENAIRES, ...PARTENAIRES].map((p, i) => (
+              <div
+                key={`${p.nom}-${i}`}
+                className="w-56 shrink-0 mx-3 bg-papier/5 border border-papier/15 rounded-2xl p-6 flex flex-col items-center gap-3 hover:bg-papier/10 hover:border-sable/60 transition-all duration-300"
+              >
+                <LogoPartenaire nom={p.nom} logo={p.logo} />
+                <p className="font-body text-sm text-papier/80 text-center">{p.nom}</p>
+              </div>
+            ))}
+          </div>
+        </div>
           </div>
         </Reveal>
       </section>

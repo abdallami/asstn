@@ -6,7 +6,7 @@ export default async function AdminLayout({ children }: { children: React.ReactN
 
   if (!session) {
     // Pas connecté → aucune sidebar, juste la page (formulaire de connexion)
-    return <div className="min-h-screen bg-base-200">{children}</div>
+    return <>{children}</>
   }
 
   return (
